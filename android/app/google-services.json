@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "933703879568",
+    "project_id": "tanzem-cdb4e",
+    "storage_bucket": "tanzem-cdb4e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933703879568:android:c4bf36ec9f5e1640cf0115",
+        "android_client_info": {
+          "package_name": "com.example.tanzem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMiUpRMJlR8O5xpF249SAAww4Yhzf4-S0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
