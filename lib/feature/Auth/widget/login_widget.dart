@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tanzem/Core/Utils/app.images.dart';
 import 'package:tanzem/feature/Auth/view/signup_view.dart';
+import 'package:tanzem/feature/MainScreen/view/main_screen_view.dart';
 import '../../../Core/Utils/app.colors.dart';
 import '../../../Core/Widgets/common_widgets.dart';
 
@@ -113,7 +114,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                     width: double.infinity,
                     height: height*0.05,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(MainScreenView());
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF0A5F5A),
                         shape: RoundedRectangleBorder(
