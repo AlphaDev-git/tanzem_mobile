@@ -1,4 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:tanzem/feature/OnBoarding/view/onboarding_view.dart';
+import '../../../Core/Utils/app.colors.dart';
 import '../../../Core/Utils/app.images.dart';
 import 'circular_gradiant_opacity_container.dart';
 
@@ -11,75 +15,45 @@ class SplashViewBody extends StatefulWidget {
 
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
-  late AnimationController animationController;
-
   @override
   void initState() {
-    faddingAnimation();
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    animationController.dispose();
-    super.dispose();
+    Timer(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) =>  OnBoardingView()),
+      );
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    final double screenHeight = MediaQuery.of(context).size.height;
-    final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Stack(children: [
-        Center(
-          child: Column(
-            children: [
-              CircularGradiantOpacityContainer(
-                screenHeight: screenHeight,
-                screenWidth: screenWidth,
-                hightRatio: 0.45,
-                widthRatio: 0.65,
-                colorOne: Colors.white,
-                colorTwo: Colors.white,
-                colorOneOpacity: 0.5,
-                colorTwoOpacity: 0,
-                radius: 0.46,
-              )
+      body: Container(
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              AppColors.primary,
+              Color(0xFFD6F5F2),
+              Color(0xFFD6F5F2),
+              Color(0xFFD6F5F2),
+              AppColors.primary,
             ],
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
           ),
         ),
-        Center(
-          child: Column(
-            children: [
-              SizedBox(
-                height: screenHeight * 0.20,
-              ),
-              SizedBox(
-                width: screenWidth * 0.55,
-                child: Opacity(
-                    opacity: animationController.value,
-                    child: Image.asset(AppImages.appPLogo)),
-              ),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              AppImages.appPLogo2,
+              width: 320,
+            ),
+          ],
         ),
-        Center(
-          child:  CircularProgressIndicator(
-            color: Colors.blue,
-          ),
-        ),
-      ]),
+      ),
     );
-  }
-
-  void faddingAnimation() {
-    animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 800));
-    animationController.addListener(() {
-      setState(() {});
-    });
-    animationController.forward();
-    animationController.repeat(reverse: true);
   }
 }
