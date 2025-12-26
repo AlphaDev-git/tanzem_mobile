@@ -40,6 +40,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - lib/core/Utils/assets/Images/
+    - lib/core/Utils/assets/fonts/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -53,7 +54,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: lib/core/Utils/assets/fonts/Cairo-Regular.ttf
+        - asset: lib/core/Utils/assets/fonts/Cairo-Bold.ttf
+        - asset: lib/core/Utils/assets/fonts/Cairo-Black.ttf
+        - asset: lib/core/Utils/assets/fonts/Cairo-ExtraLight.ttf
+        - asset: lib/core/Utils/assets/fonts/Cairo-Light.ttf
+        - asset: lib/core/Utils/assets/fonts/Cairo-SemiBold.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

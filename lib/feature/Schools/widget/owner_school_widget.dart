@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 
 
-class HomeWidget extends StatefulWidget{
+
+class OwnerSchoolWidget extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return _HomeWidget();
+    return _OwnerSchoolWidget();
   }
 }
 
-
-class _HomeWidget extends State<HomeWidget>{
+class _OwnerSchoolWidget extends State<OwnerSchoolWidget>{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold();
   }
 }
